@@ -1,5 +1,23 @@
 # studia-projektowanie-obiektowe
 
+## lab-02-php
+
+ [commit](https://github.com/Pug0r/studia-projektowanie-obiektowe/commit/d38a3d6fa392c20f295f62e31ce78f4807d05bb2)
+
+ https://github.com/user-attachments/assets/0ca69298-d23b-4618-94b3-3033e884369f
+
+
+3.0 - :white_check_mark: 
+
+3.5 - :white_check_mark:
+
+4.0 - :white_check_mark:
+
+4.5 - :x:
+
+5.0 - :x:
+
+
 ## lab-01-pascal
 
 https://github.com/user-attachments/assets/ce82ae8b-2ca9-4ba4-b794-80c3f2120aed
