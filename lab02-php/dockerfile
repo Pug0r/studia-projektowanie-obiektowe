@@ -1,0 +1,11 @@
+FROM kprzystalski/projobj-php:latest
+
+WORKDIR /home/student/projobj
+COPY --chown=student:student . .
+
+RUN composer install --no-scripts --optimize-autoloader
+
+ENV APP_ENV=dev
+
+CMD sh -c "php bin/console doctrine:schema:update --force --no-interaction --env=dev && \
+           php -S 0.0.0.0:80 -t public"
