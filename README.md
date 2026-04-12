@@ -1,5 +1,21 @@
 # studia-projektowanie-obiektowe
 
+
+## lab-04-go
+
+https://github.com/user-attachments/assets/92c81bd4-c72c-4460-ab1f-28a230fac4b6
+
+3.0 - :white_check_mark: - [commit](https://github.com/Pug0r/studia-projektowanie-obiektowe/commit/094debe63f34d03bc297b658f0ff2f77338c2381)
+
+3.5 - :white_check_mark: - [commit](https://github.com/Pug0r/studia-projektowanie-obiektowe/commit/604455c2e2363c0ed9c9e87a9d4e7de96d322ad0)
+
+4.0 - :white_check_mark: - [commit](https://github.com/Pug0r/studia-projektowanie-obiektowe/commit/624573f24a78805164990f6f76fad4c2855bfa54)
+
+4.5 - :white_check_mark: - [commit](https://github.com/Pug0r/studia-projektowanie-obiektowe/commit/e8e030f6f976e3ad543e8e5db1ab24281734cfe6)
+
+5.0 - :white_check_mark: - [commit](https://github.com/Pug0r/studia-projektowanie-obiektowe/commit/786bd2562477c5bb6d586fad4154029fcdf9aa74)
+
+
 ## lab-03-kotlin
 
 https://github.com/user-attachments/assets/50ca01a2-6a95-4460-99a3-981659e7c633
