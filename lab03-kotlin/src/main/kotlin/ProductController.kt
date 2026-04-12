@@ -1,11 +1,13 @@
 package main
 
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/api")
 class ProductController {
 
     private val products = listOf(
@@ -14,6 +16,24 @@ class ProductController {
         Product(3, "Keyboard", 259.99)
     )
 
-    @GetMapping
+    @GetMapping("/products")
     fun getProducts(): List<Product> = products
+
+    @PostMapping("/auth/login")
+    fun login(@RequestBody request: LoginRequest): LoginResponse {
+        val authenticated = AuthServiceEager.instance.authenticate(
+            request.username,
+            request.password
+        )
+        return LoginResponse(authenticated)
+    }
 }
+
+data class LoginRequest(
+    val username: String,
+    val password: String
+)
+
+data class LoginResponse(
+    val authenticated: Boolean
+)
