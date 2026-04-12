@@ -98,6 +98,10 @@ func getWeather(c echo.Context) error {
 		return c.JSON(http.StatusBadGateway, map[string]string{"error": "external api error"})
 	}
 
+	if err := db.Create(&weather).Error; err != nil {
+		return c.JSON(http.StatusInternalServerError, map[string]string{"error": "database error"})
+	}
+
 	return c.JSON(http.StatusOK, weather)
 }
 
