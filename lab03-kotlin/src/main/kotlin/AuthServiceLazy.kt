@@ -1,6 +1,6 @@
 package main
 
-class AuthServiceEager private constructor() : AuthService {
+class AuthServiceLazy private constructor() : AuthService {
 
     override
     fun authenticate(username: String, password: String): Boolean {
@@ -8,6 +8,6 @@ class AuthServiceEager private constructor() : AuthService {
     }
 
     companion object {
-        val instance: AuthServiceEager = AuthServiceEager()
+        val instance: AuthServiceLazy by lazy { AuthServiceLazy() }
     }
 }
