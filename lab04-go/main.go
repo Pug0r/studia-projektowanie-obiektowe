@@ -6,8 +6,8 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 	"time"
-
 	"github.com/glebarez/sqlite"
 	"github.com/labstack/echo/v4"
 	"gorm.io/gorm"
@@ -31,14 +31,30 @@ type openMeteoResponse struct {
 	} `json:"current_weather"`
 }
 
+type locationCoordinates struct {
+	Name      string
+	Latitude  float64
+	Longitude float64
+}
+
+type weatherRequest struct {
+	Locations []string `json:"locations"`
+}
+
+var supportedLocations = map[string]locationCoordinates{
+	"warsaw": {Name: "Warsaw", Latitude: 52.23, Longitude: 21.01},
+	"krakow": {Name: "Krakow", Latitude: 50.06, Longitude: 19.94},
+	"gdansk": {Name: "Gdansk", Latitude: 54.35, Longitude: 18.65},
+}
+
 func NewWeatherProxy() *WeatherProxy {
 	return &WeatherProxy{
 		client: &http.Client{Timeout: 10 * time.Second},
 	}
 }
 
-func (p *WeatherProxy) GetWeather() (Weather, error) {
-	url := "https://api.open-meteo.com/v1/forecast?latitude=52.23&longitude=21.01&current_weather=true"
+func (p *WeatherProxy) GetWeather(location string, latitude, longitude float64) (Weather, error) {
+	url := fmt.Sprintf("https://api.open-meteo.com/v1/forecast?latitude=%.2f&longitude=%.2f&current_weather=true", latitude, longitude)
 	resp, err := p.client.Get(url)
 	if err != nil {
 		return Weather{}, err
@@ -55,7 +71,7 @@ func (p *WeatherProxy) GetWeather() (Weather, error) {
 	}
 
 	return Weather{
-		Location:    "Warsaw",
+		Location:    location,
 		Temperature: payload.CurrentWeather.Temperature,
 		Condition:   fmt.Sprintf("code-%d", payload.CurrentWeather.WeatherCode),
 	}, nil
@@ -93,16 +109,44 @@ func initDatabase() error {
 }
 
 func getWeather(c echo.Context) error {
-	weather, err := weatherProxy.GetWeather()
-	if err != nil {
-		return c.JSON(http.StatusBadGateway, map[string]string{"error": "external api error"})
+	locations := []string{"warsaw", "krakow", "gdansk"}
+
+	queryLocations := c.QueryParam("locations")
+	if queryLocations != "" {
+		locations = strings.Split(queryLocations, ",")
 	}
 
-	if err := db.Create(&weather).Error; err != nil {
-		return c.JSON(http.StatusInternalServerError, map[string]string{"error": "database error"})
+	if c.Request().Method == http.MethodPost && c.Request().ContentLength > 0 {
+		var req weatherRequest
+		if err := c.Bind(&req); err != nil {
+			return c.JSON(http.StatusBadRequest, map[string]string{"error": "invalid request body"})
+		}
+		if len(req.Locations) > 0 {
+			locations = req.Locations
+		}
 	}
 
-	return c.JSON(http.StatusOK, weather)
+	result := make([]Weather, 0, len(locations))
+	for _, rawLocation := range locations {
+		key := strings.ToLower(strings.TrimSpace(rawLocation))
+		coordinates, ok := supportedLocations[key]
+		if !ok {
+			return c.JSON(http.StatusBadRequest, map[string]string{"error": "unsupported location"})
+		}
+
+		weather, err := weatherProxy.GetWeather(coordinates.Name, coordinates.Latitude, coordinates.Longitude)
+		if err != nil {
+			return c.JSON(http.StatusBadGateway, map[string]string{"error": "external api error"})
+		}
+
+		if err := db.Create(&weather).Error; err != nil {
+			return c.JSON(http.StatusInternalServerError, map[string]string{"error": "database error"})
+		}
+
+		result = append(result, weather)
+	}
+
+	return c.JSON(http.StatusOK, result)
 }
 
 func main() {

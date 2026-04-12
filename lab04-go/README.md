@@ -13,5 +13,5 @@ dane załadować z listy przy uruchomieniu
 - [x] 4.0 Należy stworzyć klasę proxy, która pobierze dane z serwisu
 zewnętrznego podczas zapytania do naszego kontrolera
 - [x] 4.5 Należy zapisać pobrane dane z zewnątrz do bazy danych
-- [ ] 5.0 Należy rozszerzyć endpoint na więcej niż jedną lokalizację
+- [x] 5.0 Należy rozszerzyć endpoint na więcej niż jedną lokalizację
 (Pogoda) zwracając JSONa
