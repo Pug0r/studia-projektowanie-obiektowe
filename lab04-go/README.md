@@ -8,7 +8,7 @@ endpointu można wysyłać w jako GET lub POST.
 
 - [x] 3.0 Należy stworzyć aplikację we frameworki echo w j. Go, która będzie
 miała kontroler Pogody, która pozwala na pobieranie danych o pogodzie
-- [ ] 3.5 Należy stworzyć model Pogoda wykorzystując gorm, a
+- [x] 3.5 Należy stworzyć model Pogoda wykorzystując gorm, a
 dane załadować z listy przy uruchomieniu
 - [ ] 4.0 Należy stworzyć klasę proxy, która pobierze dane z serwisu
 zewnętrznego podczas zapytania do naszego kontrolera
