@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api")
-class ProductController {
+class ProductController(
+    private val authServiceEager: AuthServiceEager
+) {
 
     private val products = listOf(
         Product(1, "Laptop", 4999.99),
@@ -21,7 +23,7 @@ class ProductController {
 
     @PostMapping("/auth/login")
     fun login(@RequestBody request: LoginRequest): LoginResponse {
-        val authenticated = AuthServiceEager.instance.authenticate(
+        val authenticated = authServiceEager.authenticate(
             request.username,
             request.password
         )
