@@ -1,5 +1,23 @@
 # studia-projektowanie-obiektowe
 
+## lab-06-smells
+
+Uzylem kodu aplikacji klienckiej z lab-05-react.
+Jako projekt opensourcowy (4.0) wybralem curl. Akurat wyszlo ze nie mial bledow do naprawy:
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Pug0r_studia-projektowanie-obiektowe&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Pug0r_studia-projektowanie-obiektowe)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Pug0r_studia-projektowanie-obiektowe&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Pug0r_studia-projektowanie-obiektowe)
+
+3.0 - :white_check_mark: - [commit](https://github.com/Pug0r/studia-projektowanie-obiektowe/commit/04db9457413d458f40413745c8c61c15c4dc4950)
+
+3.5 - :white_check_mark: - brak code smells (naprawione w anal. zadaniu na ebiznesie)
+
+4.0 - :white_check_mark: - [commit](https://github.com/Pug0r/curl-ebiznss/commit/7174237998df738fa085e44fe237b8c9420b082a)
+
+4.5 - :white_check_mark: - (widoczne powwyzej) 
+
+5.0 - :white_check_mark: - [worfklow](https://github.com/Pug0r/curl-ebiznss/blob/master/.github/workflows/codeql-ebiznes.yml)
+
 ## lab-05-react
 
 https://github.com/user-attachments/assets/3783a467-bbac-4009-ba65-43c6aa00890e
