@@ -28,6 +28,13 @@ docker-compose.override.yml
 .DS_Store
 Thumbs.db
 
+### --- Swift / Vapor ---
+**/.build/
+**/.swiftpm/
+**/*.xcodeproj/
+**/*.xcworkspace/
+**/DerivedData/
+
 /public/build/
 **/node_modules/
 **/dist/
