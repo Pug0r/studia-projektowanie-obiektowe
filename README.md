@@ -1,5 +1,19 @@
 # studia-projektowanie-obiektowe
 
+## lab-07-swift
+
+https://github.com/user-attachments/assets/54854d7f-b003-4074-90e1-ec1432ba7a9b
+
+3.0 - :white_check_mark: - [commit](https://github.com/Pug0r/studia-projektowanie-obiektowe/commit/183ba94b5764dd07c37f82cf7203cf78f71a3b96)
+
+3.5 - :white_check_mark: - [commit](https://github.com/Pug0r/studia-projektowanie-obiektowe/commit/e83a83c4d19ec5435fd09674aa8a8533cf59247b)
+
+4.0 - :x:
+
+4.5 - :x:
+
+5.0 - :x:
+
 ## lab-06-smells
 
 Uzylem kodu aplikacji klienckiej z lab-05-react.
