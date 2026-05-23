@@ -29,6 +29,10 @@ docker-compose.override.yml
 Thumbs.db
 
 /public/build/
-/node_modules/
+**/node_modules/
+**/dist/
+**/build/
+**/coverage/
+**/.vite/
 npm-debug.log
 yarn-error.log
