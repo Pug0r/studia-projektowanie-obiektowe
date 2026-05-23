@@ -1,14 +1,9 @@
 import Fluent
 import Vapor
 
-struct ProductInput: Content {
-    let name: String
-    let price: Double
-}
-
 struct ProductController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
-        let products = routes.grouped("products")
+        let products = routes.grouped("api", "products")
         products.get(use: index)
         products.post(use: create)
 
