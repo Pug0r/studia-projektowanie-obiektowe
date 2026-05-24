@@ -43,3 +43,5 @@ Thumbs.db
 **/.vite/
 npm-debug.log
 yarn-error.log
+
+.venv/
