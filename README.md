@@ -1,5 +1,19 @@
 # studia-projektowanie-obiektowe
 
+## lab-08-testy
+
+https://github.com/user-attachments/assets/92b2919c-6872-4240-9634-1aad62760a37
+
+3.0 - :white_check_mark: - [commit](https://github.com/Pug0r/studia-projektowanie-obiektowe/commit/e15e5b6a19769cb8d8ab485de075b926619054f7)
+
+3.5 - :white_check_mark: - [commit](https://github.com/Pug0r/studia-projektowanie-obiektowe/commit/c2e554da2b51844c84b89fb1fba874aa7ccfdb23)
+
+4.0 - :white_check_mark: - [commit](https://github.com/Pug0r/studia-projektowanie-obiektowe/commit/af646177a1b5762587f8261fa34e319d7bbf56ea)
+
+4.5 - :x:
+
+5.0 - :x:
+
 ## lab-07-swift
 
 https://github.com/user-attachments/assets/54854d7f-b003-4074-90e1-ec1432ba7a9b
