@@ -1,5 +1,20 @@
 # studia-projektowanie-obiektowe
 
+
+## lab-09-cloud
+
+I chose Azure. Deployed the backend app from lab04 (go). 
+
+3.0 - :white_check_mark: - [you can find it here](https://lab09-fmbsh5c2gzexatb6.polandcentral-01.azurewebsites.net/weather)
+
+3.5 - :x:
+
+4.0 - :x: 
+
+4.5 - :x:
+
+5.0 - :x:
+
 ## lab-08-testy
 
 https://github.com/user-attachments/assets/92b2919c-6872-4240-9634-1aad62760a37
