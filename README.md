@@ -7,7 +7,7 @@ I chose Azure. Deployed the backend app from lab04 (go).
 
 3.0 - :white_check_mark: - [you can find it here](https://lab09-fmbsh5c2gzexatb6.polandcentral-01.azurewebsites.net/weather)
 
-3.5 - :x:
+3.5 - :white_check_mark: - [build can be found here](https://github.com/Pug0r/studia-projektowanie-obiektowe/actions/runs/26715197408/job/78732434119)
 
 4.0 - :x: 
 
