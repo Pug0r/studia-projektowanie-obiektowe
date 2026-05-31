@@ -1,0 +1,16 @@
+name: Build App
+
+on:
+  push:
+    branches: [ "main" ] 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v4
+
+    - name: Build Docker Image
+      run: docker build -f lab04-go/Dockerfile ./lab04-go
